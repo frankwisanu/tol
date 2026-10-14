@@ -1,0 +1,34 @@
+# TOL Automation Test Data - UAT Environment
+
+agent:
+  dealer_code: "10020301"
+  rtr_code: "10015591"
+  agent_name: "MK Enterprise Co., Ltd. (CODO)"
+
+addresses:
+  green_coverage:
+    query: "Premio Condo ตึก2 ดินแดง กรุงเทพมหานคร"
+    address_id: "231099090"
+  yellow_coverage_private:
+    query: "19/22 หมู่ 4 ต.บ้านบึง อ.บ้านบึง ชลบุรี"
+    address_id: "31136185"
+
+customers:
+  thai_citizen_eligible:
+    doc_type: "THAI_ID"
+    id_number: "1103701234567"
+    first_name: "สมชาย"
+    last_name: "ใจดี"
+    birth_date: "15/08/1992"
+    expiry_date: "15/08/2030"
+    primary_mobile: "0891234567"
+    backup_mobile: "0819876543"
+    email: "somchai.uat@example.com"
+  fmc_subscriber:
+    fmc_mobile: "0642270234"
+
+packages:
+  ftth_standalone_500m:
+    offer_code: "FTOT409-500"
+    package_name: "True Gigatex Fiber 500/500 Mbps"
+    monthly_price: "499.00"

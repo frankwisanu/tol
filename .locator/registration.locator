@@ -1,0 +1,34 @@
+# True Online (TOL) Registration Repository (.locator)
+# Project: True Online (TOL) Automation Standard
+# Scope: Registration Hub, Channel Codes, PDPA Consent, and Stepper
+
+[Registration_Hub_Navigation]
+menu_tol_registration       = xpath://div[@id='menu-tol-registration' or contains(text(),'ลงทะเบียนทรูออนไลน์')]
+lbl_registration_header     = xpath://h1[contains(text(),'ลงทะเบียนทรูออนไลน์') or contains(text(),'TrueOnline Registration')]
+btn_start_registration      = xpath://button[@id='btn-start-registration' or contains(text(),'เริ่มลงทะเบียนใหม่')]
+btn_resume_registration     = xpath://button[@id='btn-resume-registration' or contains(text(),'ทำรายการต่อ')]
+btn_check_status            = xpath://button[@id='btn-check-status' or contains(text(),'ตรวจสอบสถานะการสมัคร')]
+
+[Registration_Channel_Partner]
+input_sale_agent_id         = xpath://input[@id='input-sale-agent-id' or @name='saleAgentId']
+input_rtr_code              = xpath://input[@id='input-rtr-code' or @name='rtrCode']
+input_dtr_code              = xpath://input[@id='input-dtr-code' or @name='dtrCode']
+select_sales_channel        = xpath://select[@id='sel-sales-channel' or @name='salesChannel']
+
+[Registration_Type_Selection]
+radio_new_customer          = xpath://input[@name='registrationType' and @value='NEW_CUSTOMER']
+radio_existing_addon        = xpath://input[@name='registrationType' and @value='EXISTING_ADDON']
+radio_migration_cvg         = xpath://input[@name='registrationType' and @value='MIGRATION_CVG']
+
+[Registration_Consent_PDPA]
+chk_pdpa_consent            = xpath://input[@id='chk-pdpa-consent']
+chk_registration_terms      = xpath://input[@id='chk-registration-terms']
+btn_accept_and_proceed      = xpath://button[@id='btn-accept-proceed' or contains(text(),'ยอมรับและดำเนินการต่อ')]
+
+[Registration_Workflow_Stepper]
+step_coverage               = xpath://div[contains(@class,'stepper-item') and contains(@class,'step-coverage')]
+step_service                = xpath://div[contains(@class,'stepper-item') and contains(@class,'step-service')]
+step_kyc                    = xpath://div[contains(@class,'stepper-item') and contains(@class,'step-kyc')]
+step_package                = xpath://div[contains(@class,'stepper-item') and contains(@class,'step-package')]
+step_appointment            = xpath://div[contains(@class,'stepper-item') and contains(@class,'step-appointment')]
+step_review                 = xpath://div[contains(@class,'stepper-item') and contains(@class,'step-review')]

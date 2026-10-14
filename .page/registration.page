@@ -1,0 +1,39 @@
+# True Online (TOL) Registration Page Object (.page)
+# Project: True Online (TOL) Automation Standard
+# Scope: Registration Hub, Partner Verification, PDPA Consent, and Workflow Stepper
+
+class RegistrationPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def verify_registration_hub_displayed(self):
+        """Validate registration title and hub options are displayed"""
+        pass
+
+    def select_registration_type(self, reg_type="NEW_CUSTOMER"):
+        """Select NEW_CUSTOMER, EXISTING_ADDON, or MIGRATION_CVG"""
+        pass
+
+    def input_sales_partner_codes(self, agent_id, rtr_code, dtr_code=None, channel="ONLINE"):
+        """Provide sales agent, RTR partner code, and DMS DTR code"""
+        pass
+
+    def accept_pdpa_and_registration_terms(self):
+        """Accept PDPA data privacy and registration terms checkboxes"""
+        pass
+
+    def click_start_registration(self):
+        """Initiate registration flow and transition to SGIS Coverage Check"""
+        pass
+
+    def verify_registration_stepper(self, step_name):
+        """Assert active step in registration stepper (coverage, service, kyc, package, appt, review)"""
+        pass
+
+    def click_resume_draft_registration(self, draft_tx_id=None):
+        """Resume an incomplete or pending registration order"""
+        pass
+
+    def check_registration_status(self, national_id_or_order_id):
+        """Query registration approval status or dispatch progress"""
+        pass

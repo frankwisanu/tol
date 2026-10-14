@@ -1,0 +1,55 @@
+# Package, Appointment & Order Page Objects (.page)
+# Project: True Online (TOL) Automation Standard
+
+class PackageSelectionPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def select_privilege(self, category="GENERAL", mobile_no=None):
+        """Apply General, FMC discount, or Employee privilege"""
+        pass
+
+    def filter_technology(self, tech="FTTH"):
+        """Filter package list by FTTH, FTTB, or FTTC"""
+        pass
+
+    def choose_package(self, offer_code):
+        """Select target package card by offerCode"""
+        pass
+
+    def set_entry_fee_waiver(self, waive=True):
+        """Configure 890 THB entry fee waiver"""
+        pass
+
+    def click_next(self):
+        """Advance to Customer Info and Appointment"""
+        pass
+
+
+class AppointmentAndOrderPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def input_contact_mobile(self, primary_mobile, backup_mobile):
+        """Provide primary and secondary contact numbers"""
+        pass
+
+    def select_appointment_slot(self, install_type="STANDARD", slot="MORNING"):
+        """Select technician installation date and morning/afternoon slot"""
+        pass
+
+    def verify_order_summary(self, expected_name, expected_package, expected_mrc):
+        """Verify summary contract details prior to submission"""
+        pass
+
+    def sign_contract(self):
+        """Draw electronic signature on touch canvas"""
+        pass
+
+    def submit_order(self):
+        """Submit order payload via tolSubmit API"""
+        pass
+
+    def verify_order_success(self):
+        """Assert success confirmation screen and retrieve Cust Order ID"""
+        pass

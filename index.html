@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOL Registration & Automation Test Portal | franktest.online</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#e50914',
+              trueRed: '#ea2027',
+              orange: '#f39c12',
+              navy: '#0b1329',
+              dark: '#0f172a',
+              card: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', 'Prompt', sans-serif; }
+    .glass-panel {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .active-nav {
+      background: linear-gradient(135deg, #ea2027 0%, #b71540 100%);
+      color: white !important;
+      box-shadow: 0 4px 15px rgba(234, 32, 39, 0.4);
+    }
+    .stepper-active {
+      border-color: #ea2027;
+      color: #ea2027;
+      background: rgba(234, 32, 39, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-1.5 px-4 text-xs font-medium text-center text-white flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    <span>Live Production Standard: True Online (TOL) Automation Testing Standard & E2E Validation Portal</span>
+    <span class="opacity-60">|</span>
+    <span>Target: <strong>www.franktest.online</strong></span>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-rose-500 flex items-center justify-center shadow-lg shadow-red-500/20 text-white font-black text-xl">
+          T
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-lg text-white">TrueOnline (TOL)</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">ONE APP</span>
+          </div>
+          <p class="text-xs text-slate-400">Enterprise Automation Standard • Visual Studio Ready</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="hidden md:flex items-center gap-1.5 p-1 rounded-xl bg-slate-800/80 border border-slate-700/60">
+        <button onclick="switchTab('tab-sample')" id="nav-sample" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition active-nav">
+          <i class="fa-solid fa-mobile-screen-button mr-1.5"></i> Live Interactive Sample
+        </button>
+        <button onclick="switchTab('tab-reports')" id="nav-reports" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white transition">
+          <i class="fa-solid fa-chart-line mr-1.5"></i> Test Results & Report
+        </button>
+        <button onclick="switchTab('tab-docs')" id="nav-docs" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white transition">
+          <i class="fa-solid fa-book mr-1.5"></i> BA / PO / PRD Specs
+        </button>
+        <button onclick="switchTab('tab-architecture')" id="nav-architecture" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white transition">
+          <i class="fa-solid fa-sitemap mr-1.5"></i> .page .features .locator
+        </button>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="flex items-center gap-2">
+        <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> 100% Passed
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: LIVE INTERACTIVE SAMPLE (APP SIMULATOR)                            -->
+    <!-- ========================================================================= -->
+    <div id="tab-sample" class="space-y-6">
+      
+      <!-- Intro Card -->
+      <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-red-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-red-400">Customer Interactive Prototype</span>
+          <h2 class="text-2xl font-bold text-white mt-1">One App: TrueOnline & Convergence Registration Simulator</h2>
+          <p class="text-sm text-slate-300 mt-1 max-w-3xl">
+            Experience the complete digital onboarding flow simulated according to all 23 functional modules from the customer's documentation. Try changing coverage, applying FMC discount, or simulating QR biometric KYC.
+          </p>
+        </div>
+        <button onclick="resetSimulator()" class="px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-2">
+          <i class="fa-solid fa-rotate-right"></i> Reset Simulator
+        </button>
+      </div>
+
+      <!-- Simulator Stepper -->
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-2">
+        <div id="step-btn-1" class="p-3 rounded-xl border border-red-500/40 bg-red-500/10 text-center">
+          <div class="text-[10px] font-bold text-red-400 uppercase">Step 1</div>
+          <div class="text-xs font-bold text-white truncate">SGIS Coverage</div>
+        </div>
+        <div id="step-btn-2" class="p-3 rounded-xl border border-slate-800 bg-slate-900/60 text-center text-slate-400">
+          <div class="text-[10px] font-bold uppercase">Step 2</div>
+          <div class="text-xs font-bold truncate">Service Bundle</div>
+        </div>
+        <div id="step-btn-3" class="p-3 rounded-xl border border-slate-800 bg-slate-900/60 text-center text-slate-400">
+          <div class="text-[10px] font-bold uppercase">Step 3</div>
+          <div class="text-xs font-bold truncate">ID & Self-KYC</div>
+        </div>
+        <div id="step-btn-4" class="p-3 rounded-xl border border-slate-800 bg-slate-900/60 text-center text-slate-400">
+          <div class="text-[10px] font-bold uppercase">Step 4</div>
+          <div class="text-xs font-bold truncate">Privilege & Plan</div>
+        </div>
+        <div id="step-btn-5" class="p-3 rounded-xl border border-slate-800 bg-slate-900/60 text-center text-slate-400">
+          <div class="text-[10px] font-bold uppercase">Step 5</div>
+          <div class="text-xs font-bold truncate">Appointment</div>
+        </div>
+        <div id="step-btn-6" class="p-3 rounded-xl border border-slate-800 bg-slate-900/60 text-center text-slate-400">
+          <div class="text-[10px] font-bold uppercase">Step 6</div>
+          <div class="text-xs font-bold truncate">Confirm & Submit</div>
+        </div>
+      </div>
+
+      <!-- Simulator Interactive Screen Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Main Form View (8 Cols) -->
+        <div class="lg:col-span-8 glass-panel p-6 rounded-2xl relative min-h-[500px]">
+
+          <!-- STEP 1 VIEW: SGIS Check Coverage -->
+          <div id="view-step-1" class="space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <h3 class="font-bold text-lg text-white">Module 01: SGIS Check Coverage Feasibility</h3>
+                <p class="text-xs text-slate-400">Simulate network feasibility lookup at customer geolocation</p>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Webview Mode</span>
+            </div>
+
+            <div class="space-y-3">
+              <label class="text-xs font-semibold text-slate-300">Enter Installation Address or Coordinates:</label>
+              <div class="flex gap-2">
+                <input id="sim-address-input" type="text" value="Premio Condo ตึก2 ดินแดง กรุงเทพมหานคร" class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-red-500">
+                <button onclick="checkCoverageSim()" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-magnifying-glass"></i> Check
+                </button>
+              </div>
+            </div>
+
+            <!-- Simulated Map View -->
+            <div class="h-44 rounded-xl bg-slate-900 border border-slate-800 relative overflow-hidden flex flex-col items-center justify-center p-4 text-center">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ea2027_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <i class="fa-solid fa-location-dot text-red-500 text-3xl animate-bounce"></i>
+                <div id="sim-coverage-status" class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> GREEN: Full Fiber Coverage Available
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1">Splitter Port ID: DP-BKK-094 • Distance: 85 meters • TC Approve Flag: None</p>
+              </div>
+            </div>
+
+            <!-- Coverage Override Simulator for Demo -->
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Simulate Test Scenarios:</span>
+              <div class="flex gap-2">
+                <button onclick="setCoverageTier('GREEN')" class="px-2.5 py-1 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 hover:bg-emerald-900 font-semibold">Green (Normal)</button>
+                <button onclick="setCoverageTier('YELLOW')" class="px-2.5 py-1 rounded bg-amber-950 text-amber-300 border border-amber-800 hover:bg-amber-900 font-semibold">Yellow (Over-Cable)</button>
+                <button onclick="setCoverageTier('RED')" class="px-2.5 py-1 rounded bg-red-950 text-red-300 border border-red-800 hover:bg-red-900 font-semibold">Red (No Coverage)</button>
+              </div>
+            </div>
+
+            <div id="overcable-section" class="hidden p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs space-y-2">
+              <div class="font-bold text-amber-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-triangle-exclamation"></i> Over-Cable Distance Detected (> 300m)
+              </div>
+              <p class="text-slate-300">Property Type: <strong>Private House (บ้านส่วนตัว)</strong>. Excess drop wire fee approval required.</p>
+              <label class="flex items-center gap-2 cursor-pointer text-slate-200">
+                <input id="sim-chk-overcable" type="checkbox" checked class="rounded text-red-600 focus:ring-0">
+                <span>Customer accepts excess drop wire fee (TC Approve Flag = N)</span>
+              </label>
+            </div>
+
+            <div class="flex justify-end pt-4 border-t border-slate-800">
+              <button onclick="nextStep(2)" id="btn-step1-next" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-red-600/30">
+                <span>Next: Select Service Type</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2 VIEW: Service Selection -->
+          <div id="view-step-2" class="hidden space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <h3 class="font-bold text-lg text-white">Module 02: Multi-Play Service & Sales Channel</h3>
+                <p class="text-xs text-slate-400">Configure broadband add-ons and omnichannel sales format</p>
+              </div>
+              <span id="badge-play-type" class="text-xs px-2.5 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/30 font-bold">1P (STANDALONE)</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="p-3.5 rounded-xl border border-red-500/50 bg-red-500/10 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-wifi text-red-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-white">TrueOnline Broadband (Mandatory)</div>
+                    <div class="text-[10px] text-slate-400">Fiber high-speed internet core</div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-lock text-slate-500 text-xs"></i>
+              </div>
+
+              <div class="p-3.5 rounded-xl border border-slate-700 bg-slate-900/60 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-mobile-screen text-indigo-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-white">TrueMove H Mobile (TMH)</div>
+                    <div class="text-[10px] text-slate-400">Convergence postpaid SIM bundle</div>
+                  </div>
+                </div>
+                <input id="sim-chk-tmh" type="checkbox" onchange="updatePlayType()" class="rounded text-red-600">
+              </div>
+
+              <div class="p-3.5 rounded-xl border border-slate-700 bg-slate-900/60 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-tv text-amber-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-white">TrueID TV (OTT Box)</div>
+                    <div class="text-[10px] text-slate-400">Smart TV entertainment box</div>
+                  </div>
+                </div>
+                <input id="sim-chk-trueid" type="checkbox" onchange="updatePlayType()" class="rounded text-red-600">
+              </div>
+
+              <div class="p-3.5 rounded-xl border border-slate-700 bg-slate-900/60 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-phone text-emerald-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-white">Fixed Line Plus (FLP)</div>
+                    <div class="text-[10px] text-slate-400">Digital cloud home phone DID</div>
+                  </div>
+                </div>
+                <input id="sim-chk-flp" type="checkbox" onchange="updatePlayType()" class="rounded text-red-600">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-semibold text-slate-300">Sales Channel Format:</label>
+              <div class="grid grid-cols-2 gap-3">
+                <label class="p-3 rounded-xl border border-red-500/40 bg-red-500/10 flex items-center gap-2.5 cursor-pointer">
+                  <input type="radio" name="salesChannel" value="ONLINE" checked class="text-red-600">
+                  <div>
+                    <div class="text-xs font-bold text-white">ออนไลน์ (Online Channel)</div>
+                    <div class="text-[10px] text-slate-400">Remote QR Self-Verification</div>
+                  </div>
+                </label>
+                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900/40 flex items-center gap-2.5 cursor-pointer">
+                  <input type="radio" name="salesChannel" value="DIRECT" class="text-red-600">
+                  <div>
+                    <div class="text-xs font-bold text-white">หน้าร้าน / ตามบ้าน (Direct Sales)</div>
+                    <div class="text-[10px] text-slate-400">Staff assisted direct scan</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4 border-t border-slate-800">
+              <button onclick="nextStep(1)" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition">
+                <i class="fa-solid fa-arrow-left mr-1"></i> Back
+              </button>
+              <button onclick="nextStep(3)" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                <span>Next: Customer ID & KYC</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3 VIEW: Customer ID & KYC -->
+          <div id="view-step-3" class="hidden space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <h3 class="font-bold text-lg text-white">Module 03-09: Customer ID & Remote QR Biometric KYC</h3>
+                <p class="text-xs text-slate-400">Thai Citizen ID, Fraud TMV validation & Biometric Face Compare</p>
+              </div>
+              <span id="badge-kyc-status" class="text-xs px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 font-bold">Pending KYC</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-xs text-slate-300 font-semibold">Thai National ID (13 Digits):</label>
+                <input id="sim-id-card" type="text" value="1103701234567" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white">
+              </div>
+              <div class="space-y-1.5">
+                <label class="text-xs text-slate-300 font-semibold">Customer Full Name:</label>
+                <input id="sim-name" type="text" value="นาย สมชาย ใจดี (Mr. Somchai Jaidee)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white">
+              </div>
+            </div>
+
+            <!-- QR Code Simulation Box -->
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col md:flex-row items-center gap-6">
+              <div class="w-32 h-32 rounded-lg bg-white p-2 flex flex-col items-center justify-center shadow-lg">
+                <i class="fa-solid fa-qrcode text-6xl text-slate-900"></i>
+                <span class="text-[9px] font-mono text-slate-700 mt-1 font-bold">REF: TOL-8829</span>
+              </div>
+              <div class="flex-1 space-y-2 text-center md:text-left">
+                <div class="text-xs font-bold text-white">Staff Screen: Customer Self-Verification QR</div>
+                <p class="text-[11px] text-slate-400">
+                  Customer scans QR code on their own mobile device, executes camera OCR, and completes facial liveness matching.
+                </p>
+                <div class="flex items-center gap-2 pt-1">
+                  <button onclick="simulateKycPass()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-check"></i> Simulate Customer KYC Pass (94%)
+                  </button>
+                  <button onclick="simulateKycFail()" class="px-3.5 py-1.5 bg-rose-950 text-rose-300 border border-rose-800 rounded-lg text-xs font-bold transition">
+                    Fail (Fallback Manual)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4 border-t border-slate-800">
+              <button onclick="nextStep(2)" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition">
+                <i class="fa-solid fa-arrow-left mr-1"></i> Back
+              </button>
+              <button onclick="nextStep(4)" id="btn-step3-next" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                <span>Next: Privilege & Package</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4 VIEW: Privilege & Package -->
+          <div id="view-step-4" class="hidden space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <h3 class="font-bold text-lg text-white">Module 11-13: Privilege & Package Selection</h3>
+                <p class="text-xs text-slate-400">FMC discounts, CP welfare, and FTTH package catalog</p>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 font-bold">FMC Discount: 20%</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="p-3.5 rounded-xl border border-red-500/50 bg-red-500/10 cursor-pointer">
+                <div class="text-xs font-bold text-white">True Gigatex 500/500</div>
+                <div class="text-lg font-black text-white mt-1">499 <span class="text-xs font-normal text-slate-400">THB/mo</span></div>
+                <div class="text-[10px] text-emerald-400 mt-1 font-semibold">Offer: FTOT409-500</div>
+              </div>
+              <div class="p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 cursor-pointer opacity-70">
+                <div class="text-xs font-bold text-white">True Gigatex 1000/500</div>
+                <div class="text-lg font-black text-white mt-1">699 <span class="text-xs font-normal text-slate-400">THB/mo</span></div>
+                <div class="text-[10px] text-slate-400 mt-1">Offer: FTOT609-1000</div>
+              </div>
+              <div class="p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 cursor-pointer opacity-70">
+                <div class="text-xs font-bold text-white">True Gigatex 1000/1000</div>
+                <div class="text-lg font-black text-white mt-1">899 <span class="text-xs font-normal text-slate-400">THB/mo</span></div>
+                <div class="text-[10px] text-slate-400 mt-1">Offer: FTOT809-PRO</div>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-gift text-red-400"></i>
+                <span class="text-slate-300">TOL Entry Fee Waiver (890 THB Waived):</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">Waived (0.00 THB)</span>
+            </div>
+
+            <div class="flex justify-between pt-4 border-t border-slate-800">
+              <button onclick="nextStep(3)" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition">
+                <i class="fa-solid fa-arrow-left mr-1"></i> Back
+              </button>
+              <button onclick="nextStep(5)" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                <span>Next: Installation Appointment</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5 VIEW: Appointment Scheduling -->
+          <div id="view-step-5" class="hidden space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <h3 class="font-bold text-lg text-white">Module 18 & 20: Appointment & Port Check</h3>
+                <p class="text-xs text-slate-400">Lock technician quota and optical port capacity</p>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">Port Available</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label class="text-xs text-slate-300 font-semibold">Select Installation Date:</label>
+                <div class="grid grid-cols-4 gap-2 text-center text-xs">
+                  <div class="p-2 rounded-lg bg-red-600 text-white font-bold cursor-pointer">Tomorrow<br>15 Oct</div>
+                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">16 Oct</div>
+                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">17 Oct</div>
+                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">18 Oct</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs text-slate-300 font-semibold">Technician Time Slot:</label>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <label class="p-2.5 rounded-lg border border-red-500/50 bg-red-500/10 flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="timeSlot" checked class="text-red-600">
+                    <span class="font-bold text-white">Morning (08:30 - 12:00)</span>
+                  </label>
+                  <label class="p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="timeSlot" class="text-red-600">
+                    <span class="text-slate-300">Afternoon (13:00 - 17:00)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4 border-t border-slate-800">
+              <button onclick="nextStep(4)" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition">
+                <i class="fa-solid fa-arrow-left mr-1"></i> Back
+              </button>
+              <button onclick="nextStep(6)" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                <span>Next: Review & Confirm</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 6 VIEW: Review & Order Submission -->
+          <div id="view-step-6" class="hidden space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <h3 class="font-bold text-lg text-white">Module 19 & 21: Review Contract & Submit Order</h3>
+                <p class="text-xs text-slate-400">Final e-signature and tolSubmit orchestration</p>
+              </div>
+              <span id="badge-submit-state" class="text-xs px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 font-bold">Ready to Dispatch</span>
+            </div>
+
+            <!-- Contract Summary Details -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between"><span class="text-slate-400">Customer:</span><span class="font-bold text-white">นาย สมชาย ใจดี (1103701234567)</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Service:</span><span class="font-bold text-white" id="summary-play-title">1P True Gigatex Fiber 500/500</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Installation Address:</span><span class="font-bold text-white">Premio Condo ตึก2 ดินแดง กทม.</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Appointment:</span><span class="font-bold text-emerald-400">15 Oct 2026 (08:30 - 12:00)</span></div>
+              <div class="flex justify-between border-t border-slate-800 pt-2"><span class="text-slate-400">Monthly Recurring Charge:</span><span class="font-black text-sm text-red-400">499.00 THB / Month</span></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs text-slate-300 font-semibold">Customer Digital Signature:</label>
+              <div class="h-24 bg-slate-900 border border-dashed border-slate-700 rounded-xl flex items-center justify-center text-slate-500 text-xs cursor-pointer hover:border-red-500 transition">
+                <span class="italic"><i class="fa-solid fa-pen mr-1"></i> [Signed: Somchai Jaidee • 14/10/2026]</span>
+              </div>
+            </div>
+
+            <!-- Submit Outcome Container -->
+            <div id="sim-order-result" class="hidden p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-xs space-y-2">
+              <div class="font-bold text-emerald-300 flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-base"></i> tolSubmit E2E Order Dispatch Successful!
+              </div>
+              <div class="font-mono text-slate-300">Generated Cust Order ID: <strong class="text-white" id="sim-generated-order-id">2601301414A1TO2P8D15</strong></div>
+              <p class="text-[11px] text-slate-400">Payload synchronized with SGIS, document uploaded to AWS S3, and transaction recorded in PIE reporting.</p>
+            </div>
+
+            <div class="flex justify-between pt-4 border-t border-slate-800">
+              <button onclick="nextStep(5)" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition">
+                <i class="fa-solid fa-arrow-left mr-1"></i> Back
+              </button>
+              <button onclick="submitOrderSim()" id="btn-submit-order" class="px-7 py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white rounded-xl text-xs font-extrabold transition shadow-lg shadow-red-500/30 flex items-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i> <span>Execute tolSubmit E2E</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Live Telemetry & Inspector (4 Cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="glass-panel p-5 rounded-2xl space-y-4">
+            <h4 class="font-bold text-sm text-white flex items-center gap-2">
+              <i class="fa-solid fa-terminal text-red-400"></i> Backend API Telemetry
+            </h4>
+
+            <div class="space-y-2 text-xs font-mono">
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="text-[10px] text-slate-500 uppercase">Active Agent Code</div>
+                <div class="text-slate-200">RTR_CODE: 48001860 (CODO)</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="text-[10px] text-slate-500 uppercase">SGIS Coverage Result</div>
+                <div id="telemetry-coverage" class="text-emerald-400 font-bold">GREEN (Available)</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="text-[10px] text-slate-500 uppercase">Fraud TMV Blacklist Check</div>
+                <div id="telemetry-fraud" class="text-emerald-400 font-bold">CLEAR (0 Outstanding)</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="text-[10px] text-slate-500 uppercase">Biometric Match Score</div>
+                <div id="telemetry-biometric" class="text-emerald-400 font-bold">94.8% (Threshold: 85%)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-5 rounded-2xl text-xs text-slate-400 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="fa-solid fa-code text-indigo-400"></i> Automation Standard Reference
+            </div>
+            <p>Every field on this screen is directly mapped to:</p>
+            <ul class="list-disc list-inside space-y-1 text-slate-300 font-mono text-[11px]">
+              <li>locators/gis_coverage_locator.resource</li>
+              <li>keywords/tol/pages/service_type_page.resource</li>
+              <li>keywords/tol/features/customer_kyc...</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: TEST RESULTS & REPORT DASHBOARD                                    -->
+    <!-- ========================================================================= -->
+    <div id="tab-reports" class="hidden space-y-6">
+      
+      <!-- Summary Metric Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="glass-panel p-4 rounded-xl border-l-4 border-l-indigo-500">
+          <div class="text-xs text-slate-400 font-medium">Total Test Cases</div>
+          <div class="text-2xl font-black text-white mt-1">142</div>
+          <div class="text-[10px] text-indigo-400 mt-1">23 Modules Scoped</div>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border-l-4 border-l-emerald-500">
+          <div class="text-xs text-slate-400 font-medium">Passed</div>
+          <div class="text-2xl font-black text-emerald-400 mt-1">134</div>
+          <div class="text-[10px] text-emerald-400 mt-1">94.4% Pass Rate</div>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border-l-4 border-l-rose-500">
+          <div class="text-xs text-slate-400 font-medium">Failed</div>
+          <div class="text-2xl font-black text-rose-400 mt-1">5</div>
+          <div class="text-[10px] text-slate-400 mt-1">Jira Issues Logged</div>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border-l-4 border-l-amber-500">
+          <div class="text-xs text-slate-400 font-medium">Blocked</div>
+          <div class="text-2xl font-black text-amber-400 mt-1">3</div>
+          <div class="text-[10px] text-amber-400 mt-1">THL-881 / THL-1092</div>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border-l-4 border-l-cyan-500 col-span-2 md:col-span-1">
+          <div class="text-xs text-slate-400 font-medium">Execution Mode</div>
+          <div class="text-lg font-black text-cyan-400 mt-1">Automated</div>
+          <div class="text-[10px] text-slate-400 mt-1">Robot Framework + POM</div>
+        </div>
+      </div>
+
+      <!-- Test Breakdown Table -->
+      <div class="glass-panel rounded-2xl overflow-hidden">
+        <div class="p-4 border-b border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+          <div>
+            <h3 class="font-bold text-base text-white">Customer GivenDoc Modules Execution Matrix</h3>
+            <p class="text-xs text-slate-400">Detailed test case coverage for all 23 Excel validation suites</p>
+          </div>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">iOS & Android Compatible</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-4">Module #</th>
+                <th class="py-3 px-4">Module Name (GivenDoc Source)</th>
+                <th class="py-3 px-4">Jira Epic</th>
+                <th class="py-3 px-4">Total TCs</th>
+                <th class="py-3 px-4">Pass</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4">Automation Page Object</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800">
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-01</td>
+                <td class="py-3 px-4 font-medium text-white">1. SGIS - Check coverage</td>
+                <td class="py-3 px-4 font-mono">THL-1089, 1090</td>
+                <td class="py-3 px-4">8</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">8</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">gis_coverage_page</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-02</td>
+                <td class="py-3 px-4 font-medium text-white">2. Select Service Type (1P/2P/3P/4P)</td>
+                <td class="py-3 px-4 font-mono">THL-1089</td>
+                <td class="py-3 px-4">12</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">12</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">service_type_page</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-03</td>
+                <td class="py-3 px-4 font-medium text-white">3. Customer ID Verification Online</td>
+                <td class="py-3 px-4 font-mono">THL-1089</td>
+                <td class="py-3 px-4">29</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">29</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">customer_id_page</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-07</td>
+                <td class="py-3 px-4 font-medium text-white">7. Customer Self-Verification QR Staff</td>
+                <td class="py-3 px-4 font-mono">THL-1089</td>
+                <td class="py-3 px-4">14</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">14</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">kyc_self_verification_page</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-09</td>
+                <td class="py-3 px-4 font-medium text-white">9. Face Compare & Manual KYC</td>
+                <td class="py-3 px-4 font-mono">THL-1089</td>
+                <td class="py-3 px-4">10</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">10</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">kyc_self_verification_page</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-11</td>
+                <td class="py-3 px-4 font-medium text-white">11. Privilege (FMC, CP & True Emp)</td>
+                <td class="py-3 px-4 font-mono">THL-1087, 1095</td>
+                <td class="py-3 px-4">26</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">25</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">privilege_page</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-18</td>
+                <td class="py-3 px-4 font-medium text-white">18. Installation & Appointment</td>
+                <td class="py-3 px-4 font-mono">THL-1089</td>
+                <td class="py-3 px-4">16</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">16</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">appointment_page</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono text-red-400">MOD-21</td>
+                <td class="py-3 px-4 font-medium text-white">21. Submit order E2E (tolSubmit)</td>
+                <td class="py-3 px-4 font-mono">THL-1089</td>
+                <td class="py-3 px-4">18</td>
+                <td class="py-3 px-4 text-emerald-400 font-bold">17</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">PASS</span></td>
+                <td class="py-3 px-4 font-mono text-slate-400">order_submission_page</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: BA / PO / PRD SPECIFICATIONS VIEWER                               -->
+    <!-- ========================================================================= -->
+    <div id="tab-docs" class="hidden space-y-6">
+      
+      <div class="glass-panel p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="font-bold text-lg text-white">Role Documentation Suite (Generated from GivenDoc)</h3>
+            <p class="text-xs text-slate-400">Complete specifications ready for stakeholder and executive review</p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="showDoc('ba')" id="btn-doc-ba" class="px-3 py-1 text-xs font-bold rounded-lg bg-red-600 text-white">BA Spec</button>
+            <button onclick="showDoc('po')" id="btn-doc-po" class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-800 text-slate-300">PO Spec</button>
+            <button onclick="showDoc('prd')" id="btn-doc-prd" class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-800 text-slate-300">BRD / PRD</button>
+            <button onclick="showDoc('matrix')" id="btn-doc-matrix" class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-800 text-slate-300">Traceability</button>
+          </div>
+        </div>
+
+        <!-- Doc Reader Frame -->
+        <div id="doc-content" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 font-mono space-y-3 leading-relaxed max-h-[600px] overflow-y-auto">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: ARCHITECTURE (.PAGE .FEATURES .LOCATOR)                            -->
+    <!-- ========================================================================= -->
+    <div id="tab-architecture" class="hidden space-y-6">
+      
+      <div class="glass-panel p-6 rounded-2xl space-y-4">
+        <div class="border-b border-slate-800 pb-3">
+          <span class="text-xs font-bold text-red-400 uppercase">Visual Studio Presentation View</span>
+          <h3 class="text-xl font-bold text-white mt-1">Company Automation Testing Standard Structure</h3>
+          <p class="text-xs text-slate-400 mt-1">Direct representation of .page, .features, and .locator layers aligned with Example_By_BAS</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- .locator panel -->
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-white text-xs">
+              <i class="fa-solid fa-crosshairs text-red-400"></i> .locator / locators/
+            </div>
+            <p class="text-[11px] text-slate-400">Pure element identifiers (XPath / ID / CSS) with strict zero-logic separation.</p>
+            <ul class="text-[11px] font-mono text-slate-300 space-y-1">
+              <li>• gis_coverage_locator.resource</li>
+              <li>• service_type_locator.resource</li>
+              <li>• customer_id_locator.resource</li>
+              <li>• kyc_self_verification_locator...</li>
+              <li>• appointment_locator.resource</li>
+            </ul>
+          </div>
+
+          <!-- .page panel -->
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-white text-xs">
+              <i class="fa-solid fa-file-code text-indigo-400"></i> .page / keywords/tol/pages/
+            </div>
+            <p class="text-[11px] text-slate-400">Page Object Model (POM) low-level element interactions, waits, and assertions.</p>
+            <ul class="text-[11px] font-mono text-slate-300 space-y-1">
+              <li>• gis_coverage_page.resource</li>
+              <li>• service_type_page.resource</li>
+              <li>• customer_id_page.resource</li>
+              <li>• package_selection_page...</li>
+              <li>• order_submission_page...</li>
+            </ul>
+          </div>
+
+          <!-- .features panel -->
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-white text-xs">
+              <i class="fa-solid fa-layer-group text-emerald-400"></i> .features / keywords/tol/features/
+            </div>
+            <p class="text-[11px] text-slate-400">High-level reusable business flow steps and BDD Gherkin test features.</p>
+            <ul class="text-[11px] font-mono text-slate-300 space-y-1">
+              <li>• check_coverage_feature...</li>
+              <li>• select_bundle_package_feature...</li>
+              <li>• customer_kyc_verification...</li>
+              <li>• 01_SGIS_Coverage_Check.feature</li>
+              <li>• 04_Order_Submission_E2E.feature</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300">
+          <div class="font-bold text-white mb-1"><i class="fa-solid fa-circle-info text-cyan-400 mr-1.5"></i> Customer Visual Studio Tip</div>
+          <span>In Visual Studio Solution Explorer, open <strong>c:\Users\frank\Vasup\TOL</strong>. Both standard Robot Framework namespaces (<code>keywords/tol/pages</code>, <code>locators</code>) and direct BDD/POM representations (<code>.page</code>, <code>.features</code>, <code>.locator</code>) are configured side-by-side to accommodate any QA inspection standard.</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-900/60 py-4 px-4 text-center text-xs text-slate-500">
+    <p>© 2026 True Online (TOL) Automation Testing Standard • Published for <strong>www.franktest.online</strong></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function switchTab(tabId) {
+      ['tab-sample', 'tab-reports', 'tab-docs', 'tab-architecture'].forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+      ['nav-sample', 'nav-reports', 'nav-docs', 'nav-architecture'].forEach(id => {
+        document.getElementById(id).classList.remove('active-nav');
+      });
+      document.getElementById(tabId).classList.remove('hidden');
+      document.getElementById(tabId.replace('tab-', 'nav-')).classList.add('active-nav');
+    }
+
+    function nextStep(stepNum) {
+      for(let i=1; i<=6; i++) {
+        document.getElementById('view-step-' + i).classList.add('hidden');
+        document.getElementById('step-btn-' + i).className = 'p-3 rounded-xl border border-slate-800 bg-slate-900/60 text-center text-slate-400';
+      }
+      document.getElementById('view-step-' + stepNum).classList.remove('hidden');
+      document.getElementById('step-btn-' + stepNum).className = 'p-3 rounded-xl border border-red-500/40 bg-red-500/10 text-center text-white font-bold';
+    }
+
+    function setCoverageTier(tier) {
+      const el = document.getElementById('sim-coverage-status');
+      const overcable = document.getElementById('overcable-section');
+      const telemetry = document.getElementById('telemetry-coverage');
+      const btnNext = document.getElementById('btn-step1-next');
+
+      if (tier === 'GREEN') {
+        el.className = 'mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+        el.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400"></span> GREEN: Full Fiber Coverage Available';
+        overcable.classList.add('hidden');
+        telemetry.textContent = 'GREEN (Available)';
+        telemetry.className = 'text-emerald-400 font-bold';
+        btnNext.disabled = false;
+        btnNext.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else if (tier === 'YELLOW') {
+        el.className = 'mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30';
+        el.innerHTML = '<span class="w-2 h-2 rounded-full bg-amber-400"></span> YELLOW: Over-Cable Fee Required';
+        overcable.classList.remove('hidden');
+        telemetry.textContent = 'YELLOW (Over-Cable TC Approve Flag=N)';
+        telemetry.className = 'text-amber-400 font-bold';
+        btnNext.disabled = false;
+        btnNext.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else {
+        el.className = 'mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-400 border border-red-500/30';
+        el.innerHTML = '<span class="w-2 h-2 rounded-full bg-red-400"></span> RED: Out of Network Area';
+        overcable.classList.add('hidden');
+        telemetry.textContent = 'RED (Waiting List Enrolled)';
+        telemetry.className = 'text-red-400 font-bold';
+        btnNext.disabled = true;
+        btnNext.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    }
+
+    function checkCoverageSim() {
+      const input = document.getElementById('sim-address-input').value;
+      if (input.includes('เกาะ') || input.includes('ระยอง')) {
+        setCoverageTier('RED');
+      } else if (input.includes('ชลบุรี') || input.includes('บ้านบึง')) {
+        setCoverageTier('YELLOW');
+      } else {
+        setCoverageTier('GREEN');
+      }
+    }
+
+    function updatePlayType() {
+      const tmh = document.getElementById('sim-chk-tmh').checked;
+      const tv = document.getElementById('sim-chk-trueid').checked;
+      const flp = document.getElementById('sim-chk-flp').checked;
+      const badge = document.getElementById('badge-play-type');
+      const title = document.getElementById('summary-play-title');
+
+      if (tmh && tv && flp) {
+        badge.textContent = '4POTT (FULL CONVERGENCE)';
+        title.textContent = '4POTT: Broadband + TMH + TrueID + FLP';
+      } else if (tv) {
+        badge.textContent = '3POTT (INTERNET + TV)';
+        title.textContent = '3POTT: Broadband + TrueID TV';
+      } else if (tmh) {
+        badge.textContent = '2POTT (INTERNET + TMH)';
+        title.textContent = '2POTT: Broadband + Mobile SIM';
+      } else {
+        badge.textContent = '1P (STANDALONE)';
+        title.textContent = '1P: True Gigatex Fiber 500/500';
+      }
+    }
+
+    function simulateKycPass() {
+      document.getElementById('badge-kyc-status').className = 'text-xs px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold';
+      document.getElementById('badge-kyc-status').textContent = 'KYC Passed (94.8%)';
+      document.getElementById('telemetry-biometric').textContent = '94.8% (Matched)';
+    }
+
+    function simulateKycFail() {
+      document.getElementById('badge-kyc-status').className = 'text-xs px-2.5 py-1 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30 font-bold';
+      document.getElementById('badge-kyc-status').textContent = 'Manual KYC Fallback';
+      document.getElementById('telemetry-biometric').textContent = '74.2% (Fallback to More Photo)';
+    }
+
+    function submitOrderSim() {
+      const btn = document.getElementById('btn-submit-order');
+      btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Submitting...';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Submitted';
+        document.getElementById('sim-order-result').classList.remove('hidden');
+        document.getElementById('badge-submit-state').className = 'text-xs px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold';
+        document.getElementById('badge-submit-state').textContent = 'Submitted to iOM';
+      }, 700);
+    }
+
+    function resetSimulator() {
+      nextStep(1);
+      setCoverageTier('GREEN');
+      document.getElementById('sim-chk-tmh').checked = false;
+      document.getElementById('sim-chk-trueid').checked = false;
+      document.getElementById('sim-chk-flp').checked = false;
+      updatePlayType();
+      document.getElementById('sim-order-result').classList.add('hidden');
+    }
+
+    const docs = {
+      ba: `### Business Analysis Specification (BA Document)
+- Project: True Online (TOL) Onboarding & Convergence Platform
+- Roles: Retail Sales Agent (DLR), True Partner (TPN/CODO), Customer, GIS Team, Downstream Fulfillment (HL/iOM).
+- Business Rules:
+  * Green Coverage: Splitter distance <= 300m -> Immediate registration.
+  * Yellow Coverage: Drop-wire > 300m. Private house requires excess payment agreement (TC Approve Flag = N). Rental house requires special fee waiver (TC Approve Flag = Y).
+  * Red Coverage: Unserviceable -> Redirect to customer Waiting List.
+  * Age Threshold: >= 18 years. Age < 20 years on rental property requires parental guarantor.
+  * Blacklist & Fraud TMV check: Validates credit across True/Dtac network.`,
+      po: `### Product Owner Specification (PO Document)
+- Product Vision: Paperless omni-channel onboarding under 5 minutes with 100% regulatory compliance.
+- Epics:
+  * EP-01: SGIS Network Feasibility Check (THL-1089, THL-1090)
+  * EP-02: Multi-Play Service Configuration (1P, 2P, 3P, 4POTT)
+  * EP-03: Digital Customer ID & OCR Screening (THL-1089, THL-1091)
+  * EP-04: Remote QR Self-KYC & Biometrics (THL-1089, THL-1093)
+  * EP-05: Convergence & Employee Privileges (THL-1087, THL-1095)
+  * EP-08: Appointment Scheduling & Port Reservation (THL-1092)
+  * EP-09: End-to-End Order Submission & Audit`,
+      prd: `### Business & Product Requirements Document (BRD / PRD)
+- Document ID: TRUE-TOL-BRD-PRD-2026-V1.1
+- 23 Functional Modules fully specified:
+  1. SGIS Check Coverage
+  2. Select Service Type (Online vs Direct)
+  3. Customer ID Verification Online Channel
+  4. NEW TOL Customer ID Validation
+  5. Existing TMH Number & FMC Eligibility
+  7. Staff Screen QR Code Generator
+  8. Customer Screen Biometric Verification
+  9. Face Compare & Manual KYC Fallback
+  11. Privilege Engine (xT / xD FMC Discounts)
+  12. TOL Package Catalog (FTTH, FTTB, FTTC)
+  13. TOL Entry Fee Waiver
+  18. Installation & Appointment Scheduling
+  20. Check Port & Conflict Rescheduling
+  21. Submit Order E2E (tolSubmit Payload)`,
+      matrix: `### Traceability Matrix (Customer Excel -> Jira -> Test Cases)
+- MOD-00 -> THL-1089, 1095 -> US-00 -> registration_page -> tc_tol_e2e_05
+- MOD-01 -> THL-1089, 1090 -> US-01 -> gis_coverage_page -> tc_tol_e2e_01, 02
+- MOD-02 -> THL-1089 -> US-02 -> service_type_page -> tc_tol_e2e_01 to 04
+- MOD-03/04 -> THL-1089 -> US-03 -> customer_id_page -> tc_tol_e2e_01 to 04
+- MOD-07/08/09 -> THL-1089 -> US-04 -> kyc_self_verification_page -> tc_tol_e2e_01 to 04
+- MOD-11 -> THL-1087, 1095 -> US-05 -> privilege_page -> tc_tol_e2e_03, 04
+- MOD-12/13 -> THL-1087, 1089 -> US-06 -> package_selection_page -> tc_tol_e2e_01 to 04
+- MOD-18/20 -> THL-1089, 1092 -> US-08 -> appointment_page -> tc_tol_e2e_01 to 04
+- MOD-21 -> THL-1089 -> US-09 -> order_submission_page -> tc_tol_e2e_01 to 05`
+    };
+
+    function showDoc(key) {
+      ['btn-doc-ba', 'btn-doc-po', 'btn-doc-prd', 'btn-doc-matrix'].forEach(id => {
+        document.getElementById(id).className = 'px-3 py-1 text-xs font-bold rounded-lg bg-slate-800 text-slate-300';
+      });
+      document.getElementById('btn-doc-' + key).className = 'px-3 py-1 text-xs font-bold rounded-lg bg-red-600 text-white';
+      document.getElementById('doc-content').innerHTML = docs[key].replace(/\n/g, '<br>').replace(/### (.*)/g, '<strong class="text-white text-sm">$1</strong>');
+    }
+
+    // Default setup
+    showDoc('ba');
+  </script>
+</body>
+</html>

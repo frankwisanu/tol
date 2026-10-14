@@ -1,0 +1,16 @@
+# TOL Automation Framework Settings - UAT Environment
+default:
+  browser: "chrome"
+  headless: true
+  timeout: "20s"
+  implicit_wait: "3s"
+  screenshot_dir: "reports/screenshots"
+
+application:
+  base_url: "https://oneapp-uat.truecorp.co.th/tol-registration"
+  sgis_url: "https://sgis-uat.truecorp.co.th/webview"
+  api_gateway: "https://apigw-uat.truecorp.co.th"
+
+logging:
+  level: "INFO"
+  console: "INFO"

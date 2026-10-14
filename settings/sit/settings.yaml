@@ -1,0 +1,16 @@
+# TOL Automation Framework Settings - SIT Environment
+default:
+  browser: "chrome"
+  headless: false
+  timeout: "15s"
+  implicit_wait: "2s"
+  screenshot_dir: "reports/screenshots"
+
+application:
+  base_url: "https://oneapp-sit.truecorp.co.th/tol-registration"
+  sgis_url: "https://sgis-sit.truecorp.co.th/webview"
+  api_gateway: "https://apigw-sit.truecorp.co.th"
+
+logging:
+  level: "DEBUG"
+  console: "INFO"
