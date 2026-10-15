@@ -2,6 +2,7 @@
 
 agent:
   dealer_code: "10020301"
+  sale_agent_id: "10020301"
   rtr_code: "10015591"
   agent_name: "MK Enterprise Co., Ltd. (CODO)"
 
@@ -9,9 +10,17 @@ addresses:
   green_coverage:
     query: "Premio Condo ตึก2 ดินแดง กรุงเทพมหานคร"
     address_id: "231099090"
+    lat: 13.760986
+    lng: 100.563812
   yellow_coverage_private:
     query: "19/22 หมู่ 4 ต.บ้านบึง อ.บ้านบึง ชลบุรี"
     address_id: "31136185"
+    lat: 13.310452
+    lng: 101.112450
+    house_type: "PRIVATE"
+  red_coverage:
+    query: "เกาะห่างไกล อ.เมือง ระยอง"
+    address_id: "99999999"
 
 customers:
   thai_citizen_eligible:
@@ -24,11 +33,43 @@ customers:
     primary_mobile: "0891234567"
     backup_mobile: "0819876543"
     email: "somchai.uat@example.com"
+  foreigner_passport:
+    doc_type: "PASSPORT"
+    id_number: "AB8901234"
+    first_name: "JOHN"
+    last_name: "DOE"
+    birth_date: "01/01/1988"
+    expiry_date: "01/01/2029"
+    primary_mobile: "0951112233"
+    backup_mobile: "0954445566"
+    email: "john.doe@example.com"
   fmc_subscriber:
     fmc_mobile: "0642270234"
+  cp_employee:
+    employee_id: "CP882910"
 
 packages:
   ftth_standalone_500m:
     offer_code: "FTOT409-500"
     package_name: "True Gigatex Fiber 500/500 Mbps"
     monthly_price: "499.00"
+    media_tech: "FTTH"
+  ftth_4pott_smart_box:
+    offer_code: "FTOT409-500"
+    package_name: "FTTH 4POTT Smart Box 500/500 Mbps + TrueID TV"
+    monthly_price: "699.00"
+    media_tech: "FTTH"
+
+appointments:
+  standard:
+    install_type: "STANDARD"
+    slot_time: "MORNING"
+  special:
+    install_type: "SPECIAL"
+    slot_time: "AFTERNOON"
+
+billing:
+  sms: "SMS"
+  email: "EMAIL"
+  lang_th: "TH"
+  lang_en: "EN"

@@ -1,8 +1,3 @@
-*** Settings ***
-Documentation       Feature-level business flow for Customer Contact & Installation Scheduling
-Resource            ../pages/customer_info_page.resource
-Resource            ../pages/appointment_page.resource
-
 *** Keywords ***
 Configure Contact Details And Installation Schedule
     [Arguments]    ${primary_mobile}    ${backup_mobile}    ${bill_type}    ${bill_lang}    ${install_type}    ${slot_time}    ${email}=${EMPTY}

@@ -1,20 +1,15 @@
-*** Settings ***
-Documentation   Page Object keywords for SGIS Coverage Check (Minimal Code)
-Resource        ${CURDIR}/../../../locators/gis_coverage_locator.resource
-Resource        ${CURDIR}/../../../common/common.resource
-
 *** Keywords ***
 Verify GIS Webview Displayed
-    common.Verify element is visible when ready    ${SGIS.WEBVIEW_CONTAINER}
+    common.Verify element is visible when ready    ${SGIS.WEBVIEW_CONTAINER.TEXT}
 
 Search Installation Address
     [Arguments]    ${query}
-    common.Input text when ready       ${SGIS.INPUT_SEARCH_LOCATION}    ${query}
-    common.Click element when ready    ${SGIS.BTN_SEARCH_SUBMIT}
-    common.Verify element is visible when ready    ${SGIS.PIN_MAP_MARKER}
+    common.Input text when ready       ${SGIS.SEARCH_LOCATION.TEXTBOX}    ${query}
+    common.Click element when ready    ${SGIS.SEARCH_SUBMIT.BUTTON}
+    common.Verify element is visible when ready    ${SGIS.MAP_MARKER.BUTTON}
 
 Confirm Geolocation Pin
-    common.Click element when ready    ${SGIS.BTN_CONFIRM_LOCATION}
+    common.Click element when ready    ${SGIS.CONFIRM_LOCATION.BUTTON}
 
 Verify Coverage Tier Status
     [Arguments]    ${tier}
@@ -23,10 +18,10 @@ Verify Coverage Tier Status
 Select House Type For Over Cable
     [Arguments]    ${type}
     common.Click element when ready    xpath=//input[@name='houseType' and @value='${type}']
-    Run Keyword If    '${type}' == 'PRIVATE'    common.Click element when ready    ${SGIS.CHECKBOX_ACCEPT_OVERCABLE_FEE}
+    Run Keyword If    '${type}' == 'PRIVATE'    common.Click element when ready    ${SGIS.ACCEPT_OVERCABLE_FEE.BUTTON}
 
 Click Register Service Button
-    common.Click element when ready    ${SGIS.BTN_REGISTER_SERVICE}
+    common.Click element when ready    ${SGIS.REGISTER_SERVICE.BUTTON}
 
 Click Back Arrow Button
-    common.Click element when ready    ${SGIS.BTN_BACK}
+    common.Click element when ready    ${SGIS.BACK.BUTTON}

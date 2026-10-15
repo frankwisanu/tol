@@ -1,8 +1,3 @@
-*** Settings ***
-Documentation       Feature-level business flow for Order Review, Contract Sign & Final Submission
-Resource            ../pages/order_review_page.resource
-Resource            ../pages/order_submission_page.resource
-
 *** Keywords ***
 Review Contract Sign And Submit Order
     [Arguments]    ${expected_name}    ${expected_package}    ${expected_price}

@@ -1,34 +1,31 @@
-*** Settings ***
-Documentation       Locators for Customer ID Verification, Document Selection & TMH Validation
-
 *** Variables ***
 # Screen Headers
-${CUST_ID.LABEL_SCREEN_TITLE}                 xpath=//h1[contains(text(),'ตรวจสอบข้อมูลลูกค้า') or contains(text(),'Customer ID Verification')]
+${CUST_ID.SCREEN_TITLE.TEXT}                    xpath=//h1[contains(text(),'ตรวจสอบข้อมูลลูกค้า') or contains(text(),'Customer ID Verification')]
 
 # Document Type Tabs / Radio Options
-${CUST_ID.TAB_THAI_ID}                        xpath=//div[@role='tab' and contains(text(),'บัตรประชาชน')]
-${CUST_ID.TAB_PASSPORT}                       xpath=//div[@role='tab' and contains(text(),'หนังสือเดินทาง')]
-${CUST_ID.TAB_ALIEN_CARD}                     xpath=//div[@role='tab' and contains(text(),'บัตรต่างด้าว')]
-${CUST_ID.TAB_WORK_PERMIT_BOOK}               xpath=//div[@role='tab' and contains(text(),'ใบอนุญาตทำงานแบบเล่ม')]
-${CUST_ID.TAB_WORK_PERMIT_CARD}               xpath=//div[@role='tab' and contains(text(),'บัตรอนุญาตทำงาน')]
-${CUST_ID.TAB_DRIVING_LICENSE}                xpath=//div[@role='tab' and contains(text(),'ใบขับขี่')]
+${CUST_ID.THAI_ID.BUTTON}                       xpath=//div[@role='tab' and contains(text(),'บัตรประชาชน')]
+${CUST_ID.PASSPORT.BUTTON}                      xpath=//div[@role='tab' and contains(text(),'หนังสือเดินทาง')]
+${CUST_ID.ALIEN_CARD.BUTTON}                    xpath=//div[@role='tab' and contains(text(),'บัตรต่างด้าว')]
+${CUST_ID.WORK_PERMIT_BOOK.BUTTON}              xpath=//div[@role='tab' and contains(text(),'ใบอนุญาตทำงานแบบเล่ม')]
+${CUST_ID.WORK_PERMIT_CARD.BUTTON}              xpath=//div[@role='tab' and contains(text(),'บัตรอนุญาตทำงาน')]
+${CUST_ID.DRIVING_LICENSE.BUTTON}               xpath=//div[@role='tab' and contains(text(),'ใบขับขี่')]
 
 # Input Fields
-${CUST_ID.INPUT_CARD_NUMBER}                  xpath=//input[@id='input-card-number' or @name='idNumber']
-${CUST_ID.INPUT_FIRST_NAME}                   xpath=//input[@id='input-first-name' or @name='firstName']
-${CUST_ID.INPUT_LAST_NAME}                    xpath=//input[@id='input-last-name' or @name='lastName']
-${CUST_ID.INPUT_BIRTH_DATE}                   xpath=//input[@id='input-birth-date' or @name='birthDate']
-${CUST_ID.INPUT_EXPIRY_DATE}                  xpath=//input[@id='input-expiry-date' or @name='expiryDate']
-${CUST_ID.INPUT_CONTACT_TEL}                  xpath=//input[@id='input-contact-tel' or @name='contactTel']
+${CUST_ID.CARD_NUMBER.TEXTBOX}                  xpath=//input[@id='input-card-number' or @name='idNumber']
+${CUST_ID.FIRST_NAME.TEXTBOX}                   xpath=//input[@id='input-first-name' or @name='firstName']
+${CUST_ID.LAST_NAME.TEXTBOX}                    xpath=//input[@id='input-last-name' or @name='lastName']
+${CUST_ID.BIRTH_DATE.TEXTBOX}                   xpath=//input[@id='input-birth-date' or @name='birthDate']
+${CUST_ID.EXPIRY_DATE.TEXTBOX}                  xpath=//input[@id='input-expiry-date' or @name='expiryDate']
+${CUST_ID.CONTACT_TEL.TEXTBOX}                  xpath=//input[@id='input-contact-tel' or @name='contactTel']
 
 # Verification Triggers
-${CUST_ID.BTN_SCAN_OCR}                       xpath=//button[@id='btn-scan-ocr' or contains(text(),'สแกนบัตร')]
-${CUST_ID.BTN_VALIDATE_TOL}                   xpath=//button[@id='btn-validate-tol' or contains(text(),'ตรวจสอบสิทธิ์')]
+${CUST_ID.SCAN_OCR.BUTTON}                      xpath=//button[@id='btn-scan-ocr' or contains(text(),'สแกนบัตร')]
+${CUST_ID.VALIDATE_TOL.BUTTON}                  xpath=//button[@id='btn-validate-tol' or contains(text(),'ตรวจสอบสิทธิ์')]
 
 # Error & Status Messages
-${CUST_ID.BANNER_ERROR}                       xpath=//div[contains(@class,'alert-danger') or contains(@class,'error-banner')]
-${CUST_ID.LABEL_BLACK_LIST_ERROR}             xpath=//span[contains(text(),'ไม่ผ่านการตรวจสอบ Fraud TMV')]
-${CUST_ID.LABEL_DUPLICATE_ERROR}              xpath=//span[contains(text(),'มีประวัติการสมัครซ้ำ')]
+${CUST_ID.BANNER_ERROR.TEXT}                    xpath=//div[contains(@class,'alert-danger') or contains(@class,'error-banner')]
+${CUST_ID.BLACK_LIST_ERROR.TEXT}                xpath=//span[contains(text(),'ไม่ผ่านการตรวจสอบ Fraud TMV')]
+${CUST_ID.DUPLICATE_ERROR.TEXT}                 xpath=//span[contains(text(),'มีประวัติการสมัครซ้ำ')]
 
 # Navigation
-${CUST_ID.BTN_NEXT}                           xpath=//button[@id='btn-cust-next' or contains(text(),'ถัดไป')]
+${CUST_ID.NEXT.BUTTON}                          xpath=//button[@id='btn-cust-next' or contains(text(),'ถัดไป')]

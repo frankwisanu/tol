@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation   Import Feature Resources for TOL
 Resource        ${CURDIR}/../keywords/tol/features/check_coverage_feature.resource
 Resource        ${CURDIR}/../keywords/tol/features/select_bundle_package_feature.resource
 Resource        ${CURDIR}/../keywords/tol/features/customer_kyc_verification_feature.resource

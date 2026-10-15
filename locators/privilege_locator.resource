@@ -1,24 +1,21 @@
-*** Settings ***
-Documentation       Locators for Customer Privilege (FMC, CP Employee, True Employee, F&F)
-
 *** Variables ***
 # Privilege Category Selectors
-${PRIV.RADIO_GENERAL_PUBLIC}                  xpath=//input[@name='privilegeGroup' and @value='GENERAL']
-${PRIV.RADIO_CP_EMPLOYEE}                     xpath=//input[@name='privilegeGroup' and @value='CPemp']
-${PRIV.RADIO_TRUE_EMPLOYEE}                   xpath=//input[@name='privilegeGroup' and @value='TRUEemp']
-${PRIV.RADIO_FMC_BENEFIT}                     xpath=//input[@name='privilegeGroup' and @value='FMC_TRUE_DTAC']
-${PRIV.RADIO_NO_PRIVILEGE}                    xpath=//input[@name='privilegeGroup' and @value='NONE']
+${PRIV.GENERAL_PUBLIC.BUTTON}                   xpath=//input[@name='privilegeGroup' and @value='GENERAL']
+${PRIV.CP_EMPLOYEE.BUTTON}                      xpath=//input[@name='privilegeGroup' and @value='CPemp']
+${PRIV.TRUE_EMPLOYEE.BUTTON}                    xpath=//input[@name='privilegeGroup' and @value='TRUEemp']
+${PRIV.FMC_BENEFIT.BUTTON}                      xpath=//input[@name='privilegeGroup' and @value='FMC_TRUE_DTAC']
+${PRIV.NO_PRIVILEGE.BUTTON}                     xpath=//input[@name='privilegeGroup' and @value='NONE']
 
 # Mobile Number Linking for FMC
-${PRIV.SELECT_ELIGIBLE_NUMBER}                xpath=//select[@id='sel-fmc-mobile-number']
-${PRIV.LIST_ELIGIBLE_NUMBERS}                 xpath=//div[contains(@class,'eligible-number-item')]
-${PRIV.LABEL_DISCOUNT_PERCENT}                xpath=//span[contains(@class,'discount-percent-badge')]
+${PRIV.ELIGIBLE_NUMBER.BUTTON}                  id='sel-fmc-mobile-number'
+${PRIV.ELIGIBLE_NUMBERS.BUTTON}                 xpath=//div[contains(@class,'eligible-number-item')]
+${PRIV.DISCOUNT_PERCENT.TEXT}                   xpath=//span[contains(@class,'discount-percent-badge')]
 
 # Corporate & Friends-and-Family Inputs
-${PRIV.INPUT_EMPLOYEE_ID}                     xpath=//input[@id='input-employee-id']
-${PRIV.INPUT_COUPON_CODE}                     xpath=//input[@id='input-coupon-code']
-${PRIV.BTN_VERIFY_CODE}                       xpath=//button[@id='btn-verify-privilege-code']
+${PRIV.EMPLOYEE_ID.TEXTBOX}                     id='input-employee-id'
+${PRIV.COUPON_CODE.TEXTBOX}                     id='input-coupon-code'
+${PRIV.VERIFY_CODE.BUTTON}                      id='btn-verify-privilege-code'
 
 # Navigation
-${PRIV.BTN_NEXT}                              xpath=//button[@id='btn-privilege-next' or contains(text(),'ถัดไป')]
-${PRIV.BTN_BACK}                              xpath=//button[@id='btn-privilege-back' or contains(@class,'btn-back')]
+${PRIV.NEXT.BUTTON}                             xpath=//button[@id='btn-privilege-next' or contains(text(),'ถัดไป')]
+${PRIV.BACK.BUTTON}                             xpath=//button[@id='btn-privilege-back' or contains(@class,'btn-back')]

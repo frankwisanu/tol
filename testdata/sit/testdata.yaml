@@ -2,6 +2,7 @@
 
 agent:
   dealer_code: "10014550"
+  sale_agent_id: "10014550"
   rtr_code: "48001860"
   agent_name: "MK Enterprise Co., Ltd. (CODO)"
 
@@ -16,6 +17,7 @@ addresses:
     address_id: "31136185"
     lat: 13.310452
     lng: 101.112450
+    house_type: "PRIVATE"
   red_coverage:
     query: "เกาะห่างไกล อ.เมือง ระยอง"
     address_id: "99999999"
@@ -51,10 +53,12 @@ packages:
     offer_code: "FTOT409-500"
     package_name: "True Gigatex Fiber 500/500 Mbps"
     monthly_price: "499.00"
+    media_tech: "FTTH"
   ftth_4pott_smart_box:
     offer_code: "FTOT409-500"
     package_name: "FTTH 4POTT Smart Box 500/500 Mbps + TrueID TV"
     monthly_price: "699.00"
+    media_tech: "FTTH"
 
 appointments:
   standard:
@@ -63,3 +67,9 @@ appointments:
   special:
     install_type: "SPECIAL"
     slot_time: "AFTERNOON"
+
+billing:
+  sms: "SMS"
+  email: "EMAIL"
+  lang_th: "TH"
+  lang_en: "EN"

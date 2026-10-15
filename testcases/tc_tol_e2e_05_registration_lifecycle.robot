@@ -14,8 +14,8 @@ TC_TOL_REG_01: End-to-End TrueOnline Registration Lifecycle
     # Step 2: Initiate Registration & Accept PDPA
     registration_feature.Initiate TrueOnline Registration Flow
     ...    reg_type=NEW_CUSTOMER
-    ...    sale_agent_id=39027264
-    ...    rtr_code=RTR-BKK-091
+    ...    sale_agent_id=${agent['dealer_code']}
+    ...    rtr_code=${agent['rtr_code']}
 
     # Step 3: SGIS Coverage Check
     check_coverage_feature.Verify And Confirm Green Coverage Feasibility
@@ -35,7 +35,7 @@ TC_TOL_REG_01: End-to-End TrueOnline Registration Lifecycle
 
     # Step 6: Package & Privilege Selection
     package_and_privilege_feature.Select Package With General Public Privilege
-    ...    media_tech=FTTH
+    ...    media_tech=${packages['ftth_standalone_500m']['media_tech']}
     ...    offer_code=${packages['ftth_standalone_500m']['offer_code']}
     ...    waive_entry_fee=True
 
@@ -43,8 +43,8 @@ TC_TOL_REG_01: End-to-End TrueOnline Registration Lifecycle
     installation_appointment_feature.Configure Contact Details And Installation Schedule
     ...    primary_mobile=${customers['thai_citizen_eligible']['primary_mobile']}
     ...    backup_mobile=${customers['thai_citizen_eligible']['backup_mobile']}
-    ...    bill_type=SMS
-    ...    bill_lang=TH
+    ...    bill_type=${billing['sms']}
+    ...    bill_lang=${billing['lang_th']}
     ...    install_type=${appointments['standard']['install_type']}
     ...    slot_time=${appointments['standard']['slot_time']}
 

@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation   Master Import Hub for True Online (TOL) Automation Testing Standard
 Library         SeleniumLibrary
+Library         AppiumLibrary
 Library         String
 Library         Collections
 Library         OperatingSystem
@@ -17,7 +18,3 @@ Resource        ${CURDIR}/import_common_components.resource
 # Dynamic Configurations
 Variables       ${CURDIR}/../settings/${env}/settings.yaml
 Variables       ${CURDIR}/../testdata/${env}/testdata.yaml
-
-*** Variables ***
-${env}          sit
-${GLOBAL_TIMEOUT}    15s

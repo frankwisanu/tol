@@ -1,8 +1,3 @@
-*** Settings ***
-Documentation       Feature-level business flow for Customer Identification & QR Biometric KYC
-Resource            ../pages/customer_id_page.resource
-Resource            ../pages/kyc_self_verification_page.resource
-
 *** Keywords ***
 Verify Identity And Complete Self KYC Via QR
     [Arguments]    ${doc_type}    ${id_number}    ${first_name}    ${last_name}    ${birth_date}    ${expiry_date}

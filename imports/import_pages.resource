@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation   Import Page Resources for TOL
 Resource        ${CURDIR}/../keywords/tol/pages/gis_coverage_page.resource
 Resource        ${CURDIR}/../keywords/tol/pages/service_type_page.resource
 Resource        ${CURDIR}/../keywords/tol/pages/customer_id_page.resource
@@ -11,3 +10,4 @@ Resource        ${CURDIR}/../keywords/tol/pages/appointment_page.resource
 Resource        ${CURDIR}/../keywords/tol/pages/order_review_page.resource
 Resource        ${CURDIR}/../keywords/tol/pages/order_submission_page.resource
 Resource        ${CURDIR}/../keywords/tol/pages/registration_page.resource
+Resource        ${CURDIR}/../keywords/tol/pages/oneapp_native_page.resource

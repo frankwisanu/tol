@@ -30,7 +30,7 @@ TC_TOL_E2E_03: Register Convergence 2P With FMC Discount
     # Step 5: Privilege Selection (Apply FMC Discount with Mobile Number)
     package_and_privilege_feature.Select Package With TrueMove H FMC Privilege
     ...    fmc_mobile=${customers['fmc_subscriber']['fmc_mobile']}
-    ...    media_tech=FTTH
+    ...    media_tech=${packages['ftth_standalone_500m']['media_tech']}
     ...    offer_code=${packages['ftth_standalone_500m']['offer_code']}
     ...    waive_entry_fee=True
 
@@ -38,8 +38,8 @@ TC_TOL_E2E_03: Register Convergence 2P With FMC Discount
     installation_appointment_feature.Configure Contact Details And Installation Schedule
     ...    primary_mobile=${customers['thai_citizen_eligible']['primary_mobile']}
     ...    backup_mobile=${customers['thai_citizen_eligible']['backup_mobile']}
-    ...    bill_type=SMS
-    ...    bill_lang=TH
+    ...    bill_type=${billing['sms']}
+    ...    bill_lang=${billing['lang_th']}
     ...    install_type=${appointments['standard']['install_type']}
     ...    slot_time=${appointments['standard']['slot_time']}
 

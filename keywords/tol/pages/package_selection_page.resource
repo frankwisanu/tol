@@ -1,18 +1,13 @@
-*** Settings ***
-Documentation       Page Object keywords for TOL Package List and Entry Fee
-Resource            ${CURDIR}/../../../locators/package_selection_locator.resource
-Resource            ${CURDIR}/../../../common/common.resource
-
 *** Keywords ***
 Filter Package By Media Technology
     [Arguments]    ${media_tech}
     [Documentation]    Select technology filter tab (FTTH, FTTB, FTTC)
     IF    '${media_tech}' == 'FTTH'
-        common.Click element when ready    ${PACK.FILTER_TAB_FTTH}
+        common.Click element when ready    ${PACK.FILTER_FTTH.BUTTON}
     ELSE IF    '${media_tech}' == 'FTTB'
-        common.Click element when ready    ${PACK.FILTER_TAB_FTTB}
+        common.Click element when ready    ${PACK.FILTER_FTTB.BUTTON}
     ELSE IF    '${media_tech}' == 'FTTC'
-        common.Click element when ready    ${PACK.FILTER_TAB_FTTC}
+        common.Click element when ready    ${PACK.FILTER_FTTC.BUTTON}
     END
 
 Select Broadband Package By Offer Code
@@ -25,14 +20,14 @@ Configure Entry Fee Option
     [Arguments]    ${waive_fee}=True    ${promo_code}=${EMPTY}
     [Documentation]    Apply entry fee waiver or discount voucher
     IF    ${waive_fee}
-        common.Click element when ready    ${PACK.RADIO_WAIVE_ENTRY_FEE_YES}
+        common.Click element when ready    ${PACK.WAIVE_ENTRY_FEE_YES.BUTTON}
     ELSE
-        common.Click element when ready    ${PACK.RADIO_WAIVE_ENTRY_FEE_NO}
+        common.Click element when ready    ${PACK.WAIVE_ENTRY_FEE_NO.BUTTON}
         IF    '${promo_code}' != '${EMPTY}'
-            common.Input text when ready   ${PACK.INPUT_ENTRY_FEE_CODE}    ${promo_code}
+            common.Input text when ready   ${PACK.ENTRY_FEE_CODE.TEXTBOX}    ${promo_code}
         END
     END
 
 Click Next Button On Package Selection
     [Documentation]    Proceed to Customer Info
-    common.Click element when ready        ${PACK.BTN_NEXT}
+    common.Click element when ready        ${PACK.NEXT.BUTTON}

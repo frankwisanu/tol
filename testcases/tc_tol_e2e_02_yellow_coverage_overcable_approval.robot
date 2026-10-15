@@ -14,7 +14,7 @@ TC_TOL_E2E_02: Register Broadband With Yellow Over-Cable Fee Approval
     # Step 2: SGIS Coverage Check (Yellow Tier - Private House)
     check_coverage_feature.Verify Yellow Coverage And Approve Over Cable Fee
     ...    search_address=${addresses['yellow_coverage_private']['query']}
-    ...    house_type=PRIVATE
+    ...    house_type=${addresses['yellow_coverage_private']['house_type']}
 
     # Step 3: Select Service Type (1P Standalone)
     select_bundle_package_feature.Select Standalone 1P Broadband Online Channel
@@ -30,7 +30,7 @@ TC_TOL_E2E_02: Register Broadband With Yellow Over-Cable Fee Approval
 
     # Step 5: Package Selection & Entry Fee Waiver
     package_and_privilege_feature.Select Package With General Public Privilege
-    ...    media_tech=FTTH
+    ...    media_tech=${packages['ftth_standalone_500m']['media_tech']}
     ...    offer_code=${packages['ftth_standalone_500m']['offer_code']}
     ...    waive_entry_fee=True
 
@@ -38,8 +38,8 @@ TC_TOL_E2E_02: Register Broadband With Yellow Over-Cable Fee Approval
     installation_appointment_feature.Configure Contact Details And Installation Schedule
     ...    primary_mobile=${customers['thai_citizen_eligible']['primary_mobile']}
     ...    backup_mobile=${customers['thai_citizen_eligible']['backup_mobile']}
-    ...    bill_type=EMAIL
-    ...    bill_lang=TH
+    ...    bill_type=${billing['email']}
+    ...    bill_lang=${billing['lang_th']}
     ...    install_type=${appointments['special']['install_type']}
     ...    slot_time=${appointments['special']['slot_time']}
     ...    email=${customers['thai_citizen_eligible']['email']}

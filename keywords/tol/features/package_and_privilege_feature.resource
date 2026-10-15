@@ -1,8 +1,3 @@
-*** Settings ***
-Documentation       Feature-level business flow for Privilege discounts & Package Selection
-Resource            ../pages/privilege_page.resource
-Resource            ../pages/package_selection_page.resource
-
 *** Keywords ***
 Select Package With General Public Privilege
     [Arguments]    ${media_tech}    ${offer_code}    ${waive_entry_fee}=True

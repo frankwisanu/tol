@@ -1,7 +1,3 @@
-*** Settings ***
-Documentation       Feature-level business flows for SGIS Coverage Verification
-Resource            ../pages/gis_coverage_page.resource
-
 *** Keywords ***
 Verify And Confirm Green Coverage Feasibility
     [Arguments]    ${search_address}

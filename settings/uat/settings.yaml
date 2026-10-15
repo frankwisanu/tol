@@ -11,6 +11,22 @@ application:
   sgis_url: "https://sgis-uat.truecorp.co.th/webview"
   api_gateway: "https://apigw-uat.truecorp.co.th"
 
+# Android AVD Emulator Capabilities (Appium)
+android:
+  remote_url: "http://127.0.0.1:4723"
+  platform_name: "Android"
+  platform_version: "13.0"
+  device_name: "Android Emulator"
+  avd: "Pixel_7_API_33"
+  automation_name: "UiAutomator2"
+  app_package: "com.truelife.mobile.oneapp"
+  app_activity: "com.truelife.mobile.oneapp.MainActivity"
+  auto_grant_permissions: true
+  no_reset: true
+  new_command_timeout: 300
+  chromedriver_autodownload: true
+  webview_context_name: "WEBVIEW_com.truelife.mobile.oneapp"
+
 logging:
   level: "INFO"
   console: "INFO"
